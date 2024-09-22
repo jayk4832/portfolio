@@ -1,8 +1,12 @@
 .section {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    position: relative;
 }
-.active {
-    display: block;
+.section.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 body {
@@ -184,7 +188,7 @@ body {
     position: absolute;
     right: 8%;
     width: 30%;
-    top: 30%;
+    top: 35%;
 }
 
 #About h2 {
