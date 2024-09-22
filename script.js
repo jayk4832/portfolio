@@ -12,24 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             document.getElementById(sectionId).classList.add('active');
+
+            // Update active state for navbar items
+            document.querySelectorAll('.navbar ul li').forEach(item => {
+                item.classList.remove('active');
+            });
+            this.parentElement.classList.add('active');
         });
-    });
-});
-
-document.querySelectorAll('.navbar a').forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default anchor behavior
-
-        // Remove active class from all list items
-        document.querySelectorAll('.navbar ul li').forEach(item => {
-            item.classList.remove('active');
-        });
-
-        // Add active class to the clicked item
-        this.parentElement.classList.add('active');
-
-        // Update the data-active attribute
-        const navbar = document.querySelector('.navbar');
-        navbar.setAttribute('data-active', this.getAttribute('data-section'));
     });
 });
